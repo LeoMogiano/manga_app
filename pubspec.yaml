@@ -1,0 +1,34 @@
+name: manga_mogi_app
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  carousel_slider: ^5.0.0
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.6
+  google_fonts: ^6.2.1
+  shared_preferences: ^2.3.2
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+  fonts:
+    - family: Anime Ace
+      fonts:
+        - asset: assets/fonts/animeace2_reg.ttf
+        - asset: assets/fonts/animeace2_ital.ttf
+          style: italic
+        - asset: assets/fonts/animeace2_bld.ttf
+          weight: 700
