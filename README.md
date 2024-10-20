@@ -10,10 +10,9 @@ This Flutter app showcases my top 10 favorite animes with details such as plot s
 
 ## Screenshots
 
-<video width="320" height="240" controls>
-  <source src="./screenshots/videos/demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<a href="https://www.youtube.com/watch?v=Hc79sDi3f0U" title="Demo">
+  <img src="https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg" width="50%">
+</a>
 
 ## Installation
 
