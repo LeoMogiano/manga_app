@@ -10,7 +10,7 @@ This Flutter app showcases my top 10 favorite animes with details such as plot s
 
 ## Screenshots
 
-https://github.com/user-attachments/assets/98af68ec-7890-4478-bf26-6b043b54f4ab
+[Demo Video](./screenshots/videos/demo.mp4 "Demo Video")
 
 ## Installation
 
