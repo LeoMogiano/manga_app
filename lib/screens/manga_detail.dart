@@ -117,58 +117,50 @@ class _MyMangaHeader extends SliverPersistentHeaderDelegate {
     final imageWidth = (_maxImageWidth * (1 - percent)).clamp(_minImageWidth, _maxImageWidth);
     
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.46,
+      height: maxExtent,
       child: Stack(
-        
+       alignment: Alignment.center,
         children: [
-          
-          Stack(
-           alignment: Alignment.center,
-            children: [
-              Image.asset(
-                'assets/images/bg_manga.jpg',
-                width: MediaQuery.of(context).size.width,
+          Image.asset(
+            'assets/images/bg_manga.jpg',
+            width: MediaQuery.of(context).size.width,
+            fit: BoxFit.cover,
+          ),
+          // widget para un offse
+          Positioned(
+            top: (35 * (1 - percent)).clamp(10, 35),
+            left: (MediaQuery.of(context).size.width * 0.365 * (1 - percent - 0.25)).clamp(25, MediaQuery.of(context).size.width * 0.365),
+            height: imageSize,
+            width: imageWidth,
+            child: Hero(
+              tag:  heroTag,
+              child: Image.asset(
+                manga.image,
                 
                 fit: BoxFit.cover,
               ),
-              // widget para un offset
-
-              Positioned(
-                top: (35 * (1 - percent)).clamp(10, 35),
-                left: (MediaQuery.of(context).size.width * 0.365 * (1 - percent - 0.25)).clamp(25, MediaQuery.of(context).size.width * 0.365),
-                height: imageSize,
-                width: imageWidth,
-                child: Hero(
-                  tag:  heroTag,
-                  child: Image.asset(
-                    manga.image,
-                    
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              
-              Positioned(
-                top: (475 * (1 - percent - 0.25 )).clamp(50, 350),
-                child: Container(
-                  margin:  EdgeInsets.only(
-                    left: (percent * 145).clamp(0, 105),
-                  ),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: manga.genres.map((genre) {
-                        return SlantedContainer(
-                          text: genre,
-                          fontSize: (_maxFontSize * (1 - percent)).clamp(_minFontSize, _maxFontSize),
-                        );
-                      }).toList(),
-                    ),
-                ),
-              ),    
-              
-            ],
+            ),
           ),
+          
+          Positioned(
+            top: (475 * (1 - percent - 0.25 )).clamp(50, 350),
+            child: Container(
+              margin:  EdgeInsets.only(
+                left: (percent * 145).clamp(0, 105),
+              ),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: manga.genres.map((genre) {
+                    return SlantedContainer(
+                      text: genre,
+                      fontSize: (_maxFontSize * (1 - percent)).clamp(_minFontSize, _maxFontSize),
+                    );
+                  }).toList(),
+                ),
+            ),
+          ),    
+          
         ],
       ),
     );
@@ -184,22 +176,6 @@ class _MyMangaHeader extends SliverPersistentHeaderDelegate {
   bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => false;
   
 }
-
-// class MangaPreviewSliver extends StatelessWidget {
-//   const MangaPreviewSliver({
-//     super.key,
-    
-//   });
-
-//   final String heroTag;
-//   final Manga manga;
-
-//   @override
-//   Widget build(BuildContext context) {
-    
-//   }
-// }
-
 
 class SlantedContainer extends StatelessWidget {
   final String text;

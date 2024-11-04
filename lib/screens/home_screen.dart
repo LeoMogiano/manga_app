@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:manga_mogi_app/bloc/blocs.dart';
+import 'package:manga_mogi_app/core/native_mogi_channel.dart';
 import 'package:manga_mogi_app/style/homebg_style.dart';
 import 'package:manga_mogi_app/widgets/widgets.dart';
 
@@ -39,6 +40,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontSize: 28,
                 ),
               ),
+              // const Spacer(),
+              //  IconButton(
+              //   onPressed: () async {
+
+              //     final version = await NativeMogiChannel.getPlatformVersion();
+                  
+
+              //   },
+              //   icon:  const Icon(
+              //     Icons.book,
+              //     color: Colors.white,
+              //   ),
+              // ),
+
             ],
           ),
         ),
